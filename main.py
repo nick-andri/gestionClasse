@@ -9,13 +9,15 @@ import json
 
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+
+
+    # app = QApplication(sys.argv)
     filename = "data.json"
     with open(filename,'r') as json_file:
             dico = json.load(json_file)
 
             print(dico['academies'][0]['nom'])
             print(dico['academies'][0]['etablissements'][0]['nom'])
-            print(dico['academies'][0]['etablissements'][0]['classe']['anneeSco'])
+            print(dico['academies'][0]['etablissements'][0]['classes'][0]['anneeSco'])
 
-    sys.exit(app.exec_())
+    # sys.exit(app.exec_())
