@@ -14,6 +14,8 @@ if __name__ == "__main__":
     with open(filename,'r') as json_file:
             dico = json.load(json_file)
 
-            print(dico)
+            print(dico['academies'][0]['nom'])
+            print(dico['academies'][0]['etablissements'][0]['nom'])
+            print(dico['academies'][0]['etablissements'][0]['classe']['anneeSco'])
 
     sys.exit(app.exec_())

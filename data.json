@@ -2,37 +2,37 @@
   "academies":
   [
     {
-      "nom":str,
+      "nom":"nom academie",
       "etablissements":
       [
         {
-          "nom":str,
-          "adresse":str,
+          "nom":"nom etab",
+          "adresse":"adresse etab",
           "classes":
           [
             {
-              "nom":str,
-              "anneeSco":str,
-              "PP":str,
+              "nom":"nom classe",
+              "anneeSco":2019,
+              "PP":"nomPP",
               "eleves":
               [
                 {
-                  "nom":str,
-                  "prenom":str,
-                  "adresse":str,
-                  "appreciationPP":str,
+                  "nom":"nom elelve",
+                  "prenom":"prenom elev",
+                  "adresse":"adresse eleve",
+                  "appreciationPP":"aperciation PP",
                   "matieres":
                   [
                     {
-                      "nom":str,
-                      "coef":float,
-                      "appreciation":str,
+                      "nom":"nomm Matiere",
+                      "coef":0.225,
+                      "appreciation":"apreciation matiere",
                       "notes":
                       [
                         {
-                          "nom":str,
-                          "coef": float,
-                          "valeur":float
+                          "nom":"nom devoirs",
+                          "coef": 0.5,
+                          "valeur":12.07
                         }
                       ]
                     }
