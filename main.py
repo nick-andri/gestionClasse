@@ -3,11 +3,9 @@ from PySide2.QtWidgets import QApplication, QMainWindow,QFileDialog,QListWidgetI
 from PySide2.QtCore import QUrl,QTime,QFileInfo
 import json
 from ui_interface import Ui_Form
-from note import Note
-from matiere import Matiere
-from eleve import Eleve
-from classe import Classe
-from etablissement import Etablissement
+
+from academie import Academie
+
 
 class Fenetre(QWidget):
     def __init__(self,parent = None):
@@ -16,6 +14,8 @@ class Fenetre(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
+        # exemple connect
+        # self.ui.pb_modifier.clicked.connect(self.modifUser)
 
 if __name__ == "__main__":
 
@@ -102,24 +102,43 @@ if __name__ == "__main__":
 
             #################################### test objet etablissement ####################################################
             # test creation objet etablissement
-            etab = Etablissement(dico['academies'][0]['etablissements'][0])
+            # etab = Etablissement(dico['academies'][0]['etablissements'][0])
+            # # # print(etab.dico)
+            # # # print(etab.nom)
+            # # # print(etab.listeClasses[0].nom)
+            # # # test ecriture et modif
+            # etab.nom = "nouveau nom d'etablissement"
+            # print("dico non modifier :")
             # print(etab.dico)
-            # print(etab.nom)
-            # print(etab.listeClasses[0].nom)
-            # test ecriture et modif
-            etab.nom = "nouveau nom d'etablissement"
-            print("dico non modifier :")
-            print(etab.dico)
+            #
+            # print("dico modifier :")
+            #
+            # dico['academies'][0]['etablissements'][0] = etab.majDico()
+            # print("dico objet maj:")
+            # print(etab.dico)
+            # print("dico general maj")
+            # print(dico)
 
-            print("dico modifier :")
+            #################################### test objet academie ####################################################
+            # test creation objet etablissement
+            # acad = Academie(dico['academies'][0])
+            # # # print(acad.dico)
+            # # # print(acad.nom)
+            # # # print(acad.listeEtablissement[0].nom)
+            # # # test ecriture et modif
+            # acad.nom = "nouveau nom d'academie"
+            # print("dico non modifier :")
+            # print(acad.dico)
+            #
+            # print("dico modifier :")
+            #
+            # dico['academies'][0] = acad.majDico()
+            # print("dico objet maj:")
+            # print(acad.dico)
+            # print("dico general maj")
+            # print(dico)
 
-            dico['academies'][0]['etablissements'][0] = etab.majDico()
-            print("dico objet maj:")
-            print(etab.dico)
-            print("dico general maj")
-            print(dico)
+    window = Fenetre()
+    window.show()
 
-    # window = Fenetre()
-    # window.show()
-    #
-    # sys.exit(app.exec_())
+    sys.exit(app.exec_())
