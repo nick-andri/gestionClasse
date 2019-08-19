@@ -7,7 +7,7 @@ from note import Note
 from matiere import Matiere
 from eleve import Eleve
 from classe import Classe
-
+from etablissement import Etablissement
 
 class Fenetre(QWidget):
     def __init__(self,parent = None):
@@ -82,25 +82,42 @@ if __name__ == "__main__":
             # print(dico)
 
             #################################### test objet classe ####################################################
-            # test creation objet
-            classe = Classe(dico['academies'][0]['etablissements'][0]['classes'][0])
+            # # test creation objet
+            # classe = Classe(dico['academies'][0]['etablissements'][0]['classes'][0])
+            # # print(classe.dico)
+            # # print(classe.nom)
+            # # print(classe.listeEleves[0].nom)
+            # # test ecriture et modif
+            # classe.nom = "nouveau nom de classe"
+            # print("dico non modifier :")
             # print(classe.dico)
-            # print(classe.nom)
-            # print(classe.listeEleves[0].nom)
+            #
+            # print("dico modifier :")
+            #
+            # dico['academies'][0]['etablissements'][0]['classes'][0] = classe.majDico()
+            # print("dico objet maj:")
+            # print(classe.dico)
+            # print("dico general maj")
+            # print(dico)
+
+            #################################### test objet etablissement ####################################################
+            # test creation objet etablissement
+            etab = Etablissement(dico['academies'][0]['etablissements'][0])
+            # print(etab.dico)
+            # print(etab.nom)
+            # print(etab.listeClasses[0].nom)
             # test ecriture et modif
-            classe.nom = "nouveau nom de classe"
+            etab.nom = "nouveau nom d'etablissement"
             print("dico non modifier :")
-            print(classe.dico)
+            print(etab.dico)
 
             print("dico modifier :")
 
-            dico['academies'][0]['etablissements'][0]['classes'][0] = classe.majDico()
+            dico['academies'][0]['etablissements'][0] = etab.majDico()
             print("dico objet maj:")
-            print(classe.dico)
+            print(etab.dico)
             print("dico general maj")
             print(dico)
-
-
 
     # window = Fenetre()
     # window.show()
